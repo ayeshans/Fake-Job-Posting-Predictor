@@ -1,2 +1,2 @@
-# Fake-Job-Posting-Predictor
-A ML model that predicts if a job posting is fake, with a HTML/CSS/JavaScript frontend.
+# Fake Job Posting Predictor
+ A ML model to predict if a job posting is fake, with an HTML/CSS frontend.
