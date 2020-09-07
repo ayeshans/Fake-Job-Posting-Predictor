@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fake Job Posting Predictor</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<h1>Fake Job Posting Predictor</h1>
+		<!-- <p> Enter all available information. </p> <br> -->
+		<form action="/predict" method="POST">
+
+			<label for="job_title">Job Title:</label>
+		 	<textarea name="job_title" rows="1" cols="100" placeholder="Job Title"></textarea> <br> <br>
+
+		 	<label for="location">Location:</label>
+			<textarea name="location" rows="1" cols="100" placeholder="Location"></textarea> <br><br>
+
+			<label for="department">Department:</label>
+			<textarea name="department" rows="1" cols="100" placeholder="Department"></textarea> <br><br>
+
+			<label for="company_profile">Company profile:</label>
+			<textarea name="company_profile" rows="1" cols="100" placeholder="Company profile"></textarea> <br><br>
+
+			<label for="description">Description:</label>
+			<textarea name="description" rows="1" cols="100" placeholder="Description"></textarea> <br><br>
+
+			<label for="requirements">Requirements:</label>
+			<textarea name="requirements" rows="1" cols="100" placeholder="Requirements"></textarea> <br><br>
+
+			<label for="benefits">Benefits:</label>
+			<textarea name="benefits" rows="1" cols="100" placeholder="Benefits"></textarea> <br><br>
+
+			<label for="employment_type">Employment Type:</label>
+			<textarea name="employment_type" rows="1" cols="100" placeholder="Employment Type"></textarea> <br><br>
+
+			<label for="required_experience">Required Experience:</label>
+			<textarea name="required_experience" rows="1" cols="100" placeholder="Required Experience"></textarea> <br><br>
+
+			<label for="required_education">Required Education:</label>
+			<textarea name="required_education" rows="1" cols="100" placeholder="Required Education"></textarea> <br><br>
+
+			<label for="industry">Industry:</label>
+			<textarea name="industry" rows="1" cols="100" placeholder="Industry"></textarea> <br><br>
+
+			<label for="function">Function:</label>
+			<textarea name="function" rows="1" cols="100" placeholder="Function"></textarea>
+
+			<input type="submit" value="Generate Prediction" style="float: right;">
+
+
+		</form>
+
+		<br>
+
+		<p> Your prediction is: {{ prediction_text }}	</p>
+
+		<div id="info"> How does this work?</div> <br>
+	<script src="script.js"> </script>
+	</body>
+</html>
