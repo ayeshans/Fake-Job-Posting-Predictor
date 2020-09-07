@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fake Job Posting Predictor</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<h1>Fake Job Posting Predictor</h1>
+
+		<p> This job posting is: {{ prediction_text }}	</p>
+		
+		<form action="/" method="get|post">
+			<input type="submit" value="Generate Another Prediction" style="float: right;">
+		</form>
+
+		<form action="/how" method="get|post">
+			<input type="submit" value="How does this work?" style="float: right;">
+		</form>
+
+		<br>
+
+	</body>
+</html>

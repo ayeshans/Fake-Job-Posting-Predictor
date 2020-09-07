@@ -1,16 +1,12 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
+import joblib
+from helpers import *
+
+model = joblib.load('model.joblib')
+vectorizer = joblib.load('vectorizer.joblib')
+
 app = Flask(__name__)
-
-model = pickle.load(open('model.pkl', 'rb'))
-
-import re
-def text_tokenizer(text):
-  if not (text == "" or pd.isnull(text)): 
-    text = re.sub(r'URL_[A-Za-z0-9]+', ' ', text)
-    return re.sub(r'[^A-Za-z0-9]+', ' ', text).lower().strip()
-
 
 @app.route('/')
 def home():
@@ -20,19 +16,18 @@ def home():
 @app.route('/predict',methods=['GET', 'POST'])
 def predict():
 
-    #int_features = [int(x) for x in request.form.values()]
-    #final_features = [np.array(int_features)]
-    #prediction = model.predict(final_features)
-
-    #output = round(prediction[0], 2)
-
     features = request.form['job_title'] + ' ' + request.form['location'] + ' ' + request.form['department'] + ' ' + request.form['company_profile'] + ' ' + request.form['description'] + ' ' + request.form['requirements']
     features = features +  request.form['benefits'] + ' ' + request.form['employment_type'] + ' ' + request.form['required_experience']+ ' ' + request.form['required_education'] + ' ' + request.form['industry'] + ' ' + request.form['function']
-    #inp = vectorizer.transform([text_tokenizer("hello there")])
-    #output = round(prediction[0], 2)
 
-    #return render_template('index.html', prediction_text=model.predict(inp))
-    return render_template('index.html', prediction_text=features)
+    inp = get_model_input(features, vectorizer)
+    output = model.predict(inp)
+
+    prediction_text = 'fake' if output == 1 else 'real'
+    return render_template('results.html', prediction_text=prediction_text)
+
+@app.route('/how',methods=['GET', 'POST'])
+def how():
+	return render_template('how.html')
 
 
 if __name__ == "__main__":

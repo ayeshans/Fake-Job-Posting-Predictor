@@ -52,9 +52,11 @@
 
 		<br>
 
-		<p> Your prediction is: {{ prediction_text }}	</p>
+		<p> This job posting is: {{ prediction_text }}	</p>
 
-		<div id="info"> How does this work?</div> <br>
-	<script src="script.js"> </script>
+		<form action="/how" method="get|post">
+			<input type="submit" value="How does this work?" style="float: right;">
+		</form>
+
 	</body>
 </html>
