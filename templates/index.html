@@ -2,60 +2,60 @@
 <html>
 	<head>
 		<title>Fake Job Posting Predictor</title>
-		<link rel="stylesheet" href="styles.css">
+		<!-- <link rel="stylesheet" href="styles.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	</head>
-	<body>
-		<h1>Fake Job Posting Predictor</h1>
+	<body style="background-color:rgba(255, 204, 204, 0.4);">
+		<h2 style="font-family:arial;text-align: center;">Fake Job Posting Predictor</h2>
 		<!-- <p> Enter all available information. </p> <br> -->
-		<form action="/predict" method="POST">
+		<form class="form-group" action="/predict" method="POST">
 
-			<label for="job_title">Job Title:</label>
-		 	<textarea name="job_title" rows="1" cols="100" placeholder="Job Title"></textarea> <br> <br>
+			<label class="control-label col-sm-2" for="job_title">Job Title:</label>
+			<textarea name="job_title" rows="1" cols="75" placeholder="Job Title"></textarea> <br><br>
 
-		 	<label for="location">Location:</label>
-			<textarea name="location" rows="1" cols="100" placeholder="Location"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="location">Location:</label>
+			<textarea name="location" rows="1" cols="75" placeholder="Location"></textarea> <br><br>
 
-			<label for="department">Department:</label>
-			<textarea name="department" rows="1" cols="100" placeholder="Department"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="department">Department:</label>
+			<textarea name="department" rows="1" cols="75" placeholder="Department"></textarea> <br><br>
 
-			<label for="company_profile">Company profile:</label>
-			<textarea name="company_profile" rows="1" cols="100" placeholder="Company profile"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="description">Company Profile:</label>
+			<textarea name="company_profile" rows="1" cols="75" placeholder="Company Profile"></textarea> <br><br>
 
-			<label for="description">Description:</label>
-			<textarea name="description" rows="1" cols="100" placeholder="Description"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="description">Description:</label>
+			<textarea name="description" rows="1" cols="75" placeholder="Description"></textarea> <br><br>
 
-			<label for="requirements">Requirements:</label>
-			<textarea name="requirements" rows="1" cols="100" placeholder="Requirements"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="requirements">Requirements:</label>
+			<textarea name="requirements" rows="1" cols="75" placeholder="Requirements"></textarea> <br><br>
 
-			<label for="benefits">Benefits:</label>
-			<textarea name="benefits" rows="1" cols="100" placeholder="Benefits"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="benefits">Benefits:</label>
+			<textarea name="benefits" rows="1" cols="75" placeholder="Benefits"></textarea> <br><br>
 
-			<label for="employment_type">Employment Type:</label>
-			<textarea name="employment_type" rows="1" cols="100" placeholder="Employment Type"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="employment_type">Employment Type:</label>
+			<textarea name="employment_type" rows="1" cols="75" placeholder="Employment Type"></textarea> <br><br>
 
-			<label for="required_experience">Required Experience:</label>
-			<textarea name="required_experience" rows="1" cols="100" placeholder="Required Experience"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="required_experience">Required Experience:</label>
+			<textarea name="required_experience" rows="1" cols="75" placeholder="Required Experience"></textarea> <br><br>
 
-			<label for="required_education">Required Education:</label>
-			<textarea name="required_education" rows="1" cols="100" placeholder="Required Education"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="required_education">Required Education:</label>
+			<textarea name="required_education" rows="1" cols="75" placeholder="Required Education"></textarea> <br><br>
 
-			<label for="industry">Industry:</label>
-			<textarea name="industry" rows="1" cols="100" placeholder="Industry"></textarea> <br><br>
+			<label class="control-label col-sm-2" for="industry">Industry:</label>
+			<textarea name="industry" rows="1" cols="75" placeholder="Industry"></textarea> <br><br>
 
-			<label for="function">Function:</label>
-			<textarea name="function" rows="1" cols="100" placeholder="Function"></textarea>
+			<label class="control-label col-sm-2" for="function">Function:</label>
+			<textarea name="function" rows="1" cols="75" placeholder="Function"></textarea>
 
-			<input type="submit" value="Generate Prediction" style="float: right;">
+			<br><br>
+			<input type="submit" value="Generate Prediction" style="float:right;">
 
 
 		</form>
 
 		<br>
 
-		<p> This job posting is: {{ prediction_text }}	</p>
-
 		<form action="/how" method="get|post">
-			<input type="submit" value="How does this work?" style="float: right;">
+			<input type="submit" value="How does this work?" style="float:right">
 		</form>
 
 	</body>
