@@ -2,21 +2,24 @@
 <html>
 	<head>
 		<title>Fake Job Posting Predictor</title>
-		
-		<link rel="stylesheet" href="../static/styles.css" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="../static/styles.css" /> -->
 	</head>
 	<body>
-		<h2>Fake Job Posting Predictor</h2>
+		<div class="container">
+			<h2>Fake Job Posting Predictor</h2> <br>
 
-		<p> This job posting is: {{ prediction_text }}	</p>
+			<h5> This job posting is: {{ prediction_text }}	</h5> <br>
 		
-		<form action="/" method="get">
-			<input type="submit" value="Generate Another Prediction" style="float: right;">
-		</form>
+			<form action="/" method="get">
+				<button type="submit" class="btn btn-primary"> Generate Another Prediction </button>
+			</form>
+			
+		</div>
 
-		<form action="/how" method="get">
+		<!-- <form action="/how" method="get">
 			<input type="submit" value="How does this work?" style="float: right;">
-		</form>
+		</form> -->
 
 		<br>
 

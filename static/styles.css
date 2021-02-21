@@ -6,3 +6,8 @@ body {
 h2 {
 	text-align: center;
 }
+
+.input-container {
+	align-items: center;
+	align-self: center;
+}

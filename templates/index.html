@@ -2,61 +2,43 @@
 <html>
 	<head>
 		<title>Fake Job Posting Predictor</title>
-		<!-- <link rel="stylesheet" href="styles.css"> -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="../static/styles.css"> -->
 	</head>
 	<body style="background-color:rgba(255, 204, 204, 0.4);">
-		<h2 style="font-family:arial;text-align: center;">Fake Job Posting Predictor</h2>
-		<!-- <p> Enter all available information. </p> <br> -->
-		<form class="form-group" action="/predict" method="POST">
+		<div class="container d-grid">
+			<h2>Fake Job Posting Predictor</h2> <br>
+			<!-- <p> Enter all available information. </p> <br> -->
 
-			<label class="control-label col-sm-2" for="job_title">Job Title:</label>
-			<textarea name="job_title" rows="1" cols="75" placeholder="Job Title"></textarea> <br><br>
+			<h5> This is a support-vector machine that predicts if a job posting is fake with a 94% accuracy. The frontend was built using HTML/CSS/Bootstrap. </h5>
+			<h5> The link to the dataset can be found <a href="https://www.kaggle.com/shivamb/real-or-fake-fake-jobposting-prediction"> here</a>. </h5> <br>
+			
+			<form action="/predict" method="POST">
+				<div class="form-group">
+					<input name="job_title" class="form-control" placeholder="Job Title"> <br>
+					<input name="location" class="form-control" placeholder="Location"> <br>
+					<input name="department" class="form-control" placeholder="Department"> <br>
+					<input name="company_profile" class="form-control" placeholder="Company Profile"> <br>
+					<input name="description" class="form-control" placeholder="Description"> <br>
+					<input name="requirements" class="form-control" placeholder="Requirements"> <br>
+					<input name="benefits" class="form-control" placeholder="Benefits"> <br>
+					<input name="employment_type" class="form-control" placeholder="Employment Type"> <br>
+					<input name="required_experience" class="form-control" placeholder="Required Experience"><br>
+					<input name="required_education" class="form-control" placeholder="Required Education"><br>
+					<input name="industry" class="form-control" placeholder="Industry"> <br>
+					<input name="function" class="form-control" placeholder="Function"><br>
 
-			<label class="control-label col-sm-2" for="location">Location:</label>
-			<textarea name="location" rows="1" cols="75" placeholder="Location"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="department">Department:</label>
-			<textarea name="department" rows="1" cols="75" placeholder="Department"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="description">Company Profile:</label>
-			<textarea name="company_profile" rows="1" cols="75" placeholder="Company Profile"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="description">Description:</label>
-			<textarea name="description" rows="1" cols="75" placeholder="Description"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="requirements">Requirements:</label>
-			<textarea name="requirements" rows="1" cols="75" placeholder="Requirements"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="benefits">Benefits:</label>
-			<textarea name="benefits" rows="1" cols="75" placeholder="Benefits"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="employment_type">Employment Type:</label>
-			<textarea name="employment_type" rows="1" cols="75" placeholder="Employment Type"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="required_experience">Required Experience:</label>
-			<textarea name="required_experience" rows="1" cols="75" placeholder="Required Experience"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="required_education">Required Education:</label>
-			<textarea name="required_education" rows="1" cols="75" placeholder="Required Education"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="industry">Industry:</label>
-			<textarea name="industry" rows="1" cols="75" placeholder="Industry"></textarea> <br><br>
-
-			<label class="control-label col-sm-2" for="function">Function:</label>
-			<textarea name="function" rows="1" cols="75" placeholder="Function"></textarea>
-
-			<br><br>
-			<input type="submit" value="Generate Prediction" style="float:right;">
-
-
-		</form>
+					<button type="submit" class="btn btn-primary"> Generate Prediction </button>
+					<!-- <input type="submit" value="Generate Prediction"> -->
+				</div>
+			</form>
+		</div>
 
 		<br>
 
-		<form action="/how" method="get">
+		<!-- <form action="/how" method="get">
 			<input type="submit" value="How does this work?" style="float:right">
-		</form>
+		</form> -->
 
 	</body>
 </html>
