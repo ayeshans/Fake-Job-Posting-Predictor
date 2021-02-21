@@ -13,7 +13,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/predict',methods=['GET', 'POST'])
+@app.route('/predict',methods=['POST'])
 def predict():
 
     features = request.form['job_title'] + ' ' + request.form['location'] + ' ' + request.form['department'] + ' ' + request.form['company_profile'] + ' ' + request.form['description'] + ' ' + request.form['requirements']
@@ -25,7 +25,7 @@ def predict():
     prediction_text = 'fake' if output == 1 else 'real'
     return render_template('results.html', prediction_text=prediction_text)
 
-@app.route('/how',methods=['GET', 'POST'])
+@app.route('/how',methods=['GET'])
 def how():
 	return render_template('how.html')
 
